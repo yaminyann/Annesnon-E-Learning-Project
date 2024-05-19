@@ -1,0 +1,49 @@
+{% extends "common_code/base.html" %}
+{% block title %}Login{% endblock title %}
+{% load static %}
+
+{% block content %}
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">অ্যাকাউন্ট এ প্রবেশ করুন</h6>
+          <h1 class="mb-5">অন্বেষণ অ্যাকাউন্ট এ প্রবেশ করুন</h1>
+      </div>
+      <div class="row g-4">
+          <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <img src="{% static 'img/login.jpg' %}" alt="login_gif" height="100%">
+          </div>
+          <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+            <br><br><br><br><br>
+              <form method="POST">
+                {% csrf_token %}
+                  <div class="row g-3">
+                      <div class="col-12">
+                        <div class="form-floating">
+                          {{form.username}}
+                          <label for="name">আপনার ইউজারনেম</label>
+                          {{form.username.errors}}
+                      </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating">
+                          {{form.password}}
+                          <label for="name">আপনার অ্যাকাউন্ট এর পাসওয়ার্ড টি লিখুন</label>
+                          {{form.password.errors}}
+                      </div>
+                      </div>
+                      <div class="col-12">
+                          <button class="btn btn-primary w-100 py-3" type="submit">অ্যাকাউন্ট এ প্রবেশ করুন</button>
+                      </div>
+                  </div>
+                  {{ form.non_field_errors }}
+              </form>
+              <br>
+              <p>রেজিস্ট্রেশন করতে এখানে ক্লিক করুন - <a href="{% url 'signup' %}">রেজিস্ট্রেশন</a> </p>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Contact End -->
+{% endblock content %}

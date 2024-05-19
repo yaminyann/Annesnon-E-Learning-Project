@@ -1,0 +1,91 @@
+{% extends "common_code/base.html" %}
+{% block title %}Contact{% endblock title %}
+
+{% block content %}
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">যোগাযোগ করুন</h6>
+            <h1 class="mb-5">যেকোনো প্রশ্ন এবং মন্তব্যের জন্য যোগাযোগ করুন</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h5>স্বাগতম অন্বেষণে!</h5>
+                <p class="mb-4">অন্বেষণে আপনাকে স্বাগতম! আমরা ডিপ্লোমা স্টুডেন্টদের জন্য উন্নত শিক্ষা ও দক্ষতা উন্নয়ন প্রদানের কাজে অবদান রেখে চলেছি । আমাদের সাথে যোগাযোগ করুন এবং আপনার কারিগরি প্রশ্নে সম্মিলিত হন। আমরা আপনার সাথে থাকতে আগ্রহী।</p>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="fa fa-map-marker-alt text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">অফিস</h5>
+                        <p class="mb-0">পুলিশ লাইন, ভাইনা মোড়, মাগুরা ।</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">মোবাইল</h5>
+                        <p class="mb-0">+880 1911833030</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
+                        <i class="fa fa-envelope-open text-white"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary">ই-মেইল</h5>
+                        <p class="mb-0">anneshonacademy@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4351.720622198966!2d89.40247616951801!3d23.484034048161128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe560f9f844acf%3A0x9969151c6e342ea4!2z4Kaq4KeB4Kay4Ka_4Ka2IOCmsuCmvuCmh-CmqOCmuOCnjSwg4Kau4Ka-4KaX4KeB4Kaw4Ka-!5e0!3m2!1sen!2sbd!4v1707131554409!5m2!1sen!2sbd" frameborder="0" style="min-height: 370px; border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                {{form.name}}
+                                <label for="name">আপনার নাম</label>
+                                {{form.name.errors}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                {{form.email}}
+                                <label for="email">ই-মেইল</label>
+                                {{form.email.errors}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                {{form.subjects}}
+                                <label for="subject">বিষয়</label>
+                                {{form.subjects.errors}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                {{form.textbox}}
+                                <label for="message">আপনার মন্তব্য লিখুন</label>
+                                {{form.textbox.errors}}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3" type="submit">পাঠান</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->
+
+{% endblock content %}

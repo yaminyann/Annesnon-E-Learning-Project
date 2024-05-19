@@ -1,0 +1,84 @@
+{% extends "common_code/base.html" %}
+{% block title %}About{% endblock title %}
+{% load static %}
+{% block content %}
+<!-- About Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">আমাদের সম্পর্কে</h6>
+                <h1 class="mb-4">অন্বেষণ এ স্বাগতম |</h1>
+                <p class="mb-4">অন্বেষণ একটি প্রযুক্তিগত এবং শিক্ষামূলক প্লাটফর্ম, যা ডিপ্লোমা স্তরের ছাত্র-ছাত্রীদের জন্য উন্নত শিক্ষা সরবরাহ করে। আমরা প্রতিটি শিক্ষার্থীর সম্ভাব্য উন্নত করার লক্ষ্যে কাজ করছি।</p>
+                <p class="mb-4">আমাদের লক্ষ্য: <br> আমাদের লক্ষ্য হলো শিক্ষার্থীদের কারিগরি যোগ্যতা এবং দক্ষতা উন্নত করে তাদের পেশাদার পথে প্রবেশ করতে সাহায্য করা।</p>
+                <p class="mb-4">আমাদের উদ্দেশ্য: <br><ul>
+                    <li>প্রযুক্তিগত শিক্ষার মাধ্যমে ছাত্র-ছাত্রীদের প্রযুক্তিগত দক্ষতা উন্নত করা।</li>
+                    <li>বিশেষ প্রশিক্ষণের মাধ্যমে তাদের পেশাদার পথে সফলতা অর্জন করার সাথে সাথে তাদের আত্মবিশ্বাস ও সমৃদ্ধি বৃদ্ধি করা।</li>
+                </ul></p>
+                <p class="mb-4">আমাদের সেবাসমূহ: <br><ul>
+                    <li>উন্নত পাঠ্যধারা: আমরা প্রযুক্তিগত এবং কারিগরি বিষয়ে উন্নত পাঠ্যধারা সরবরাহ করি যা ছাত্র-ছাত্রীদের প্রয়োজনীয় দক্ষতা এবং জ্ঞান অর্জনে সাহায্য করে।</li>
+                    <li>ক্যারিয়ার ডেভেলপমেন্ট: আমরা শিক্ষার্থীদের ক্যারিয়ার প্রস্তুতির জন্য উপযুক্ত প্রশিক্ষণ, মান্যতা এবং সহায়তা সরবরাহ করি যা তাদের প্রয়োজনীয় পেশাদার দক্ষতা অর্জনে সাহায্য করে।</li>
+                </ul></p>
+                <p>অন্বেষণ এ আপনার প্রশ্ন এবং আগ্রহের জন্য স্বাগতম। আমরা সবসময় আপনার সাথে আছি এবং আপনার পেশাদার পথে সহায়তা করতে উদ্বুদ্ধ ।</p>
+                <div class="row gy-2 gx-4 mb-4">
+                    <p>আমারা যেসব সুবিধা দিয়ে থাকি :</p>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>দক্ষ প্রশিক্ষক</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>লাইভ এবং রেকর্ডেড ক্লাস</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>সহজ স্টাডি ম্যাটেরিয়াল</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>অভিজ্ঞ মেন্টর</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>সাবলীল উপস্থাপনা</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>ক্যারিয়ার ও ইন্টারভিউ প্রস্তুতি</p>
+                    </div>
+                </div>
+                <a class="btn btn-primary py-3 px-5 mt-2" href="https://www.facebook.com/anneshondotcom" target="_blank">আরও  জানুন</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Team Start -->
+<!-- <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+            <h1 class="mb-5">Expert Instructors</h1>
+        </div>
+        <div class="row g-4">
+            {% for instructor_details in instructor %}
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{{instructor_details.instructor_profile_picture.url}}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href="{{instructor_details.fb_profile_link}}"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href="{{instructor_details.linkedIn_profile_link}}"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href="{{instructor_details.twitter_profile_link}}"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-0">{{instructor_details.instructor_name}}</h5>
+                        <small>{{instructor_details.qualification}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div> -->
+<!-- Team End -->
+{% endblock content %}

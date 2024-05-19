@@ -1,0 +1,238 @@
+{% extends "common_code/base.html" %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block content %}
+
+  <!-- Carousel Start -->
+  <div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+       {% for slider in slider %}
+        <div class="owl-carousel-item position-relative">
+            <img class="img-fluid" src="{{slider.background_image.url}}" alt="">
+            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
+                <div class="container">
+                    <div class="row justify-content-start">
+                        <div class="col-sm-10 col-lg-8">
+                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown">{{slider.header}}</h5>
+                            <h1 class="display-3 text-white animated slideInDown">{{slider.title}}</h1>
+                            <p class="fs-5 text-white mb-4 pb-2">{{slider.sub_title}}</p>
+                            <a href="{{slider.read_more_button}}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">বিস্তারিত</a>
+                            <a href="{{slider.join_now_button}}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">জয়েন করুন</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-certificate text-primary mb-4"></i>
+                        <h5 class="mb-3">সার্টিফিকেট প্রদান</h5>
+                        <p> পারফরম্যান্সের উপর ভিত্তি করে সার্টিফিকেট প্রদান</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-person-chalkboard text-primary mb-4"></i>
+                        <h5 class="mb-3">ইনসট্রাক্টর সাপোর্ট </h5>
+                        <p>মন খুলে প্রশ্ন করুন। </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                        <h5 class="mb-3">লাইভ ক্লাস</h5>
+                        <p>শেখা হবে লাইভ ক্লাসে। </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item text-center pt-3">
+                    <div class="p-4">
+                        <i class="fa fa-3x fa-list-check text-primary mb-4"></i>
+                        <h5 class="mb-3">অ্যাসাইনমেন্ট</h5>
+                        <p>প্র্যাকটিক্যাল প্রজেক্ট ও অ্যাসাইনমেন্ট করানো</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+<!-- Categories Start -->
+<div class="container-xxl py-5 category">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">কোর্স সমূহ</h6>
+            <h1 class="mb-5">কোর্স ক্যাটাগরি</h1>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-12 col-md-6">
+                <div class="row g-3">
+                    <!-- academic program start -->
+                    <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                        <a class="position-relative d-block overflow-hidden" href="{% url 'academic' %}">
+                            <img class="img-fluid" src="{% static 'img/edu.jpg' %}" alt="" height="200px">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">একাডেমিক প্রোগ্রাম</h5>
+                                <small class="text-primary">{{academic}} Course available</small>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- academic program END -->
+
+                    <!-- skill development course start -->
+                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                        <a class="position-relative d-block overflow-hidden" href="{% url 'skills' %}">
+                            <img class="img-fluid" src="{% static 'img/ss.avif' %}" alt="">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">স্কিল ডেভেলপমেন্ট কোর্স</h5>
+                                <small class="text-primary">{{skill}} Course available</small>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- skill development course end -->
+
+                    <!-- others course start -->
+                    <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
+                        <a class="position-relative d-block overflow-hidden" href="">
+                            <img class="img-fluid" src="{% static 'img/o.avif' %}" alt="">
+                            <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
+                                <h5 class="m-0">অন্যান্য কোর্স</h5>
+                                <small class="text-primary">{{others}} Course available</small>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- others course end -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Categories end -->
+
+
+<!-- Courses Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3"> কোর্সসমূহ</h6>
+            <h1 class="mb-5">পপুলার কোর্সসমূহ</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+           <!-- course item start -->
+           {% for course in popular_course %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="course-item bg-light">
+                    <div class="position-relative overflow-hidden">
+                        <img class="img-fluid" src="{{course.course_banner.url}}" alt="">
+                        <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                            <a href="{% url 'details' course.id %}" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">বিস্তারিত</a>
+                            {% if request.user.is_authenticated %}
+                           <a href="{{course.course_playlist_link}}" target="_blank" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">জয়েন করুন</a>
+                           {% else %}
+                           <a href="{% url 'signup' %}" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">জয়েন করুন</a>
+                           {% endif %}
+                        </div>
+                    </div>
+                    <div class="text-center p-4 pb-0">
+                        <h3 class="mb-0"> <del><small style="font-size: 25px;">৳ {{course.course_price}}</small></del> {{course.discount_price}}</h3>
+                        <div class="mb-3">
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small class="fa fa-star text-primary"></small>
+                            <small>({{course.total_review_person}})</small>
+                        </div>
+                        <h5 class="mb-4">{{course.course_name}}</h5>
+                    </div>
+                    <div class="d-flex border-top">
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{course.course_instructor}}</small>
+                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{course.duration_hour}}</small>
+                        <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{course.total_student}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}  
+            <!-- course item end --> 
+        </div>
+    </div>
+</div>
+<!-- Courses End -->
+
+
+<!-- paginator -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination" style="justify-content: center;">
+      {% if popular_course.has_previous %}
+      <li class="page-item"><a class="page-link" href="/?page=1">1</a></li>
+      <li class="page-item">
+        <a class="page-link" href="/?page={{popular_course.previous_page_number}}" tabindex="-1" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      {% endif %}
+
+      {% for page in page_total %}
+      <li class="page-item"><a class="page-link" href="/?page={{page}}">{{page}}</a></li>
+      {% endfor %}
+
+      {% if popular_course.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="/?page={{popular_course.next_page_number}}" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+<!-- paginator -->
+
+
+<!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="text-center">
+            <h6 class="section-title bg-white text-center text-primary px-3">আমাদের সম্পর্কে শিক্ষার্থীদের মতামত</h6>
+        </div>
+        <div class="owl-carousel testimonial-carousel position-relative">
+            {% for reviews in reviews %}
+            <div class="testimonial-item text-center">
+                <!-- <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;"> -->
+                <h5 class="mb-0">{{reviews.name}}</h5>
+                <br>
+                <div class="testimonial-text bg-light text-center p-4">
+                <p class="mb-0">{{reviews.messages}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+{% endblock content %}

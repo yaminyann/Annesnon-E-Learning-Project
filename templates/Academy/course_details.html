@@ -1,0 +1,92 @@
+{% extends "common_code/base.html" %}
+{% block title %}course details{% endblock title %}
+
+{% block content %}
+
+<!-- faq start -->
+<section id="faq" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h3>কোর্স সম্পর্কে বিস্তারিত</h3>
+          <div class="faq">
+            <div class="accordion" id="accordionExample">
+              <!-- accordion start -->
+              {% for accordion in accordion %}
+              <div class="accordion-item">
+                <h2 class="accordion-header rounded-3" id="faqOne">
+                  <button
+                    class="accordion-button collapsed faqbtn"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <b>{{accordion.question}}</b>
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="faqOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <ul type="square">
+                      <li>
+                        {{accordion.answer}}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- accordion end -->
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+          <div class="card" id="card" style="width: 26rem">
+            <div class="card-body">
+              <!-- <iframe
+                width="390"
+                height="200"
+                src="{{course.demo_class_link_YT}}"
+                frameborder="0"
+              ></iframe> -->
+              <iframe
+                width="390"
+                height="200"
+                src="https://youtu.be/DmVuh8v_q3Y?si=LY4igNHRcT9KWlfv"
+                frameborder="0"
+              ></iframe>
+              
+              <h5 class="card-title my-3">{{course.discount_price}}</h5>
+              {% if request.user.is_authenticated %}
+              <a href="{{course.course_playlist_link}}" target="_blank" class="btn btn-primary w-100">শুরু করুন</a>
+              {% else %}
+              <a href="{% url 'login' %}" target="_blank" class="btn btn-primary w-100">ভর্তি হোন</a>
+              {% endif %}
+              <div class="desc">
+                <p>
+                  <i class="fa-solid fa-user-group me-2"></i>কোর্সটি করছেন {{course.total_student}}
+                  জন
+                </p>
+                <p>
+                  <i class="fa-solid fa-stopwatch me-2"></i>সময় লাগবে {{course.duration_hour}} ঘন্টা
+                </p>
+                <p>
+                  <i class="fa-solid fa-calendar-days me-2"></i>সময়সীমা {{course.duration_day}} দিন
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- faq end -->
+
+
+{% endblock content %}
